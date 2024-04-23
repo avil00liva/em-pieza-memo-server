@@ -25,9 +25,6 @@ export class Med {
   @Column()
   med_start: Date;
 
-  @Column()
-  test: string;
-
   @DeleteDateColumn()
   deletedAt: Date;
 

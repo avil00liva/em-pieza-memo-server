@@ -14,7 +14,17 @@ import { ActiveUser } from 'src/common/decorators/active-user.decorator';
 import { Auth } from 'src/auth/decorators/auth.decorator';
 import { Role } from 'src/common/enums/role.enum';
 import { ActiveUserInterface } from 'src/common/interfaces/active-user.interface';
+import {
+  ApiBearerAuth,
+  ApiTags,
+  ApiUnauthorizedResponse,
+} from '@nestjs/swagger';
 
+@ApiBearerAuth()
+@ApiUnauthorizedResponse({
+  description: 'Unauthorized Bearer Auth',
+})
+@ApiTags('Citas medicas')
 @Auth(Role.USER)
 @Controller('citas-medicas')
 export class CitasMedicasController {

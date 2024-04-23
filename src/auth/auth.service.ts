@@ -27,7 +27,11 @@ export class AuthService {
       password: hashedPassword,
     });
 
-    return 'User created successfully';
+    return {
+      name,
+      email,
+      password: hashedPassword,
+    };
   }
 
   async login({ email, password }: LoginDto) {
